@@ -1,0 +1,110 @@
+﻿//  ╔═════════════════════════════════════════════════════════════════════════════════╗
+//  ║                                                                                 ║
+//  ║   Copyright 2024 Universe.Net.CueSheet                                          ║
+//  ║                                                                                 ║
+//  ║   Licensed under the Apache License, Version 2.0 (the "License");               ║
+//  ║   you may not use this file except in compliance with the License.              ║
+//  ║   You may obtain a copy of the License at                                       ║
+//  ║                                                                                 ║
+//  ║       http://www.apache.org/licenses/LICENSE-2.0                                ║
+//  ║                                                                                 ║
+//  ║   Unless required by applicable law or agreed to in writing, software           ║
+//  ║   distributed under the License is distributed on an "AS IS" BASIS,             ║
+//  ║   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.      ║
+//  ║   See the License for the specific language governing permissions and           ║
+//  ║   limitations under the License.                                                ║
+//  ║                                                                                 ║
+//  ║                                                                                 ║
+//  ║   Copyright 2024 Universe.Net.CueSheet                                          ║
+//  ║                                                                                 ║
+//  ║   Лицензировано согласно Лицензии Apache, Версия 2.0 ("Лицензия");              ║
+//  ║   вы можете использовать этот файл только в соответствии с Лицензией.           ║
+//  ║   Вы можете найти копию Лицензии по адресу                                      ║
+//  ║                                                                                 ║
+//  ║       http://www.apache.org/licenses/LICENSE-2.0.                               ║
+//  ║                                                                                 ║
+//  ║   За исключением случаев, когда это регламентировано существующим               ║
+//  ║   законодательством или если это не оговорено в письменном соглашении,          ║
+//  ║   программное обеспечение распространяемое на условиях данной Лицензии,         ║
+//  ║   предоставляется "КАК ЕСТЬ" и любые явные или неявные ГАРАНТИИ ОТВЕРГАЮТСЯ.    ║
+//  ║   Информацию об основных правах и ограничениях,                                 ║
+//  ║   применяемых к определенному языку согласно Лицензии,                          ║
+//  ║   вы можете найти в данной Лицензии.                                            ║
+//  ║                                                                                 ║
+//  ╚═════════════════════════════════════════════════════════════════════════════════╝
+
+using Universe.Net.CueSheet.Enums;
+
+namespace Universe.Net.CueSheet.Models
+{
+    /// <summary>
+    /// This command is used to specify a data/audio file that will be written to the recorder.
+    /// </summary>
+    public struct AudioFile
+    {
+        private string _mFilename;
+        private FileType _mFiletype;
+
+        public string Filename
+        {
+            get => _mFilename;
+            set => _mFilename = value;
+        }
+
+        /// <summary>
+        ///     BINARY - Intel binary file (least significant byte first)
+        ///     MOTOROLA - Motorola binary file (most significant byte first)
+        ///     AIFF - Audio AIFF file
+        ///     WAVE - Audio WAVE file
+        ///     MP3 - Audio MP3 file
+        /// </summary>
+        public FileType Filetype
+        {
+            get => _mFiletype;
+            set => _mFiletype = value;
+        }
+
+        /// <summary>
+        ///     Initializes an instance of the class <see cref="AudioFile"/>
+        /// </summary>
+        /// <param name="filename">An audio file name</param>
+        /// <param name="filetype">A file type of the audio</param>
+        public AudioFile(string filename, string filetype)
+        {
+            _mFilename = filename;
+
+            switch (filetype.Trim().ToUpper())
+            {
+                case "BINARY":
+                    _mFiletype = FileType.BINARY;
+                    break;
+                case "MOTOROLA":
+                    _mFiletype = FileType.MOTOROLA;
+                    break;
+                case "AIFF":
+                    _mFiletype = FileType.AIFF;
+                    break;
+                case "WAVE":
+                    _mFiletype = FileType.WAVE;
+                    break;
+                case "MP3":
+                    _mFiletype = FileType.MP3;
+                    break;
+                default:
+                    _mFiletype = FileType.BINARY;
+                    break;
+            }
+        }
+
+        /// <summary>
+        ///     Initializes an instance of the class <see cref="AudioFile"/>
+        /// </summary>
+        /// <param name="filename">An audio file name</param>
+        /// <param name="filetype">A file type of the audio</param>
+        public AudioFile(string filename, FileType filetype)
+        {
+            _mFilename = filename;
+            _mFiletype = filetype;
+        }
+    }
+}
