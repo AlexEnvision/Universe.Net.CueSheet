@@ -1,4 +1,4 @@
-﻿//  ╔═════════════════════════════════════════════════════════════════════════════════╗
+//  ╔═════════════════════════════════════════════════════════════════════════════════╗
 //  ║                                                                                 ║
 //  ║   Copyright 2024 Universe.Net.CueSheet                                          ║
 //  ║                                                                                 ║
@@ -39,6 +39,9 @@ using Universe.NetFramework.CueSheet.Models;
 
 namespace Universe.NetFramework.CueSheet.Tests
 {
+    /// <summary>
+    /// <author>Alex Universe</author>
+    /// </summary>
     class Program
     {
         static void Main(string[] args)

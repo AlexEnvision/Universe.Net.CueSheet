@@ -1,5 +1,8 @@
 namespace Universe.Net.CueSheet.FormsApp
 {
+    /// <summary>
+    /// <author>Alex Universe</author>
+    /// </summary>
     internal static class Program
     {
         /// <summary>

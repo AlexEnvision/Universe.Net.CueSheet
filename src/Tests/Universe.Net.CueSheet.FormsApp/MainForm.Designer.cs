@@ -1,5 +1,8 @@
-﻿namespace Universe.Net.CueSheet.FormsApp
+namespace Universe.Net.CueSheet.FormsApp
 {
+    /// <summary>
+    /// <author>Alex Universe</author>
+    /// </summary>
     partial class MainForm
     {
         /// <summary>

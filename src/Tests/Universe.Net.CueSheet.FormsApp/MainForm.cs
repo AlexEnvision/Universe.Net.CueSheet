@@ -4,6 +4,9 @@ using Universe.Windows.Forms.Controls;
 
 namespace Universe.Net.CueSheet.FormsApp
 {
+    /// <summary>
+    /// <author>Alex Universe</author>
+    /// </summary>
     public partial class MainForm : Form
     {
         private ThreadMachine _threadMachine;
@@ -32,7 +35,7 @@ namespace Universe.Net.CueSheet.FormsApp
                 if (e.AllowReport)
                 {
                     var currentDate = DateTime.Now;
-                    var message = $"[{currentDate}] Во время выполнения операции произошла ошибка. Текст ошибки: {e.Message}.{Environment.NewLine} Трассировка стека: {e.Ex.StackTrace}{Environment.NewLine}";
+                    var message = $"[{currentDate}] пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: {e.Message}.{Environment.NewLine} пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ: {e.Ex.StackTrace}{Environment.NewLine}";
 
                     this.SafeCall(() => 
                         tbLog.AppendText($"[{currentDate:dd:MM:yyyy} {currentDate:hh:mm}]:{message}{Environment.NewLine}" +
